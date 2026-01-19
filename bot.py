@@ -65,12 +65,10 @@ bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
 
 
+
 @dp.message(Command("start"))
 async def start(msg: Message):
-    if msg.from_user.id not in ADMIN_IDS:
-        return
-    await msg.answer("✅ Бот успешно запущен")
-
+    await msg.answer("✅ Бот жив и отвечает")
 
 async def prematch_scanner():
     while True:
